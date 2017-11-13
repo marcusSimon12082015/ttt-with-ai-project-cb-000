@@ -36,4 +36,16 @@ class Board
   def update(index,player)
     @cells[index.to_i-1] = player.token
   end
+  def draw?
+    @board.full? && !won?
+    #binding.pry
+  end
+  def over?
+    won? || draw?
+  end
+  def won?
+    WIN_COMBINATIONS.detect do |combo|
+      combo.all? {|indx| @cells[indx] == "X"} || combo.all? {|indx| @cells[indx] == "O"}
+    end
+  end
 end
