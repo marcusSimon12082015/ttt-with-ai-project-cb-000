@@ -59,7 +59,7 @@ class Game
             loop do
               puts "Who should go first? 1 - Computer |-|-| 2 - Human?"
                   go_first = gets.strip
-                  if ["exit","1","2"].detect{|element| element == go_first} != nil
+                  if ["1","2"].detect{|element| element == go_first} != nil
                     if go_first == "1"
                       game = Game.new(Players::Computer.new("X"), Players::Human.new("O"))
                     elsif go_first == "2"
