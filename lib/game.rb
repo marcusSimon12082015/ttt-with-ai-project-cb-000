@@ -62,10 +62,8 @@ class Game
                   if ["1","2"].detect{|element| element == go_first} != nil
                     if go_first == "1"
                       game = Game.new(Players::Computer.new("X"), Players::Human.new("O"))
-                    elsif go_first == "2"
-                      game = Game.new(Players::Human.new("X"), Players::Computer.new("O"))
                     else
-                      break
+                      game = Game.new(Players::Human.new("X"), Players::Computer.new("O"))
                     end
                   end
                 end
