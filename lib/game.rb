@@ -68,9 +68,9 @@ class Game
                   game = Game.new(Players::Human.new("X"), Players::Computer.new("O"))
                 end
           end
+          game = Game.new if type_of_game == "2"
+          game.play
       end
-      game = Game.new if type_of_game == "2"
-      game.play
     end
   end
 end
