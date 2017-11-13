@@ -16,7 +16,7 @@ module Players
     end
     def minimax(board, player)
       availSpots = valid_moves(board)
-      
+
     end
     def move(board)
 
