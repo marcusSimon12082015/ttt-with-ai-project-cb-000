@@ -43,10 +43,6 @@ class Game
     while !over? do turn end
     won? ? (puts "Congratulations #{winner}!") : (puts "Cat's Game!")
   end
-  def check_input(input)
-    valid_values = ["exit","0","1","2"]
-    valid_values.detect{|element| element == input}
-  end
   def self.start
     puts "Welcome to Tic Tac Toe!"
     loop do
@@ -56,7 +52,7 @@ class Game
       puts "2 - human vs human"
       puts "Type exit to quit!"
       type_of_game = gets.strip
-      if check_input(type_of_game) != nil
+      if  ["exit","0","1","2"].detect{|element| element == type_of_game} != nil
         break if type_of_game == "exit"
         game = Game.new(Players::Computer.new("X"),Players::Computer.new("O")) if type_of_game == "0"
           if type_of_game == "1"
