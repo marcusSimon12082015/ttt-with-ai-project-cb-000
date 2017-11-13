@@ -45,7 +45,7 @@ class Game
   end
   def check_input(input)
       input = input.to_i
-      input.is_a Integer && input.between(0,2) 
+      input.is_a Integer && input.between(0,2)
   end
   def self.start
     puts "Welcome to Tic Tac Toe!"
