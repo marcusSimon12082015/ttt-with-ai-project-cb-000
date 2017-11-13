@@ -58,11 +58,15 @@ class Game
           if type_of_game == "1"
             puts "Who should go first? 1 - Computer |-|-| 2 - Human?"
                 go_first = gets.strip
-                if go_first == "1"
-                  game = Game.new(Players::Computer.new("X"), Players::Human.new("O"))
-                else
-                  game = Game.new(Players::Human.new("X"), Players::Computer.new("O"))
-                end
+                if ["exit","1","2"].detect{|element| element == go_first} != nil
+                  if go_first == "1"
+                    game = Game.new(Players::Computer.new("X"), Players::Human.new("O"))
+                  elsif go_first == "2"
+                    game = Game.new(Players::Human.new("X"), Players::Computer.new("O"))
+                  else
+                    break
+                  end
+                end  
           end
           game = Game.new if type_of_game == "2"
           game.play
