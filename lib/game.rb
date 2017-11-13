@@ -63,11 +63,10 @@ class Game
                 if ["1","2"].detect{|element| element == go_first} != nil
                   if go_first == "1"
                     game = Game.new(Players::Computer.new("X"), Players::Human.new("O"))
-                    end_loop = true
                   else
                     game = Game.new(Players::Human.new("X"), Players::Computer.new("O"))
-                    end_loop = true
                   end
+                  end_loop = true
                 end
                 break if end_loop
               end
