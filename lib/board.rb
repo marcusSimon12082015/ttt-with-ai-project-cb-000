@@ -58,4 +58,7 @@ class Board
       combo.all? {|indx| @cells[indx] == "X"} || combo.all? {|indx| @cells[indx] == "O"}
     end
   end
+  def winner
+    @cells[won?.first] if won?
+  end
 end
